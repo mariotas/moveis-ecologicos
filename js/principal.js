@@ -6,7 +6,10 @@ $(function() {
 			var stringStart = newMessage.indexOf(" : ");
 			var stringStop = newMessage.indexOf("]", stringStart);
 			if (stringStart > 0 && stringStop > 0) {
-				$("div.alert-success").html(newMessage.substring(stringStart + 2, stringStop + 1));
+				$("div.alert-success")
+					.html(newMessage.substring(stringStart + 2, stringStop + 1))
+					.removeClass("alert-success")
+					.addClass("alert-danger");
 			}
 		}
 	});
